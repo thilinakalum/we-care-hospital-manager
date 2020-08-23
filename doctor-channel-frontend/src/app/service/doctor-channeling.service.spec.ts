@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { DoctorChannelingService } from './doctor-channeling.service';
+import {DoctorChannelingService} from './doctor-channeling.service';
 
 describe('DoctorChannelingService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

@@ -1,10 +1,10 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { DoctorChannelingService } from '../service/doctor-channeling.service';
-import { ActivatedRoute } from '@angular/router';
-import { Booking } from '../dto/booking';
-import { DoctorSession } from '../dto/doctor-session';
-import { SnotifyService } from 'ng-snotify';
-import { NgxSpinnerService } from 'ngx-spinner';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {DoctorChannelingService} from '../service/doctor-channeling.service';
+import {ActivatedRoute} from '@angular/router';
+import {Booking} from '../dto/booking';
+import {DoctorSession} from '../dto/doctor-session';
+import {SnotifyService} from 'ng-snotify';
+import {NgxSpinnerService} from 'ngx-spinner';
 
 @Component({
   selector: 'app-confirm-booking',
@@ -15,13 +15,14 @@ export class ConfirmBookingComponent implements OnInit {
 
   public booking: Booking = new Booking();
   public doctorSession: DoctorSession = new DoctorSession();
-  @ViewChild('inputForm', { static: true }) inputForm;
+  @ViewChild('inputForm', {static: true}) inputForm;
 
   constructor(
     private doctorChannelingService: DoctorChannelingService,
     private snotifyService: SnotifyService,
     private ngxSpinnerService: NgxSpinnerService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute) {
+  }
 
   ngOnInit() {
     this.ngxSpinnerService.show();

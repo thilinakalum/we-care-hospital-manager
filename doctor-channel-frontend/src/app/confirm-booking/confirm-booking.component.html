@@ -7,11 +7,12 @@
       <div class="ui-profile">
         <div class="doctor-profile">
           <div class="doctor-photo"><img alt="doctor character background"
-              src="https://image.freepik.com/free-vector/doctor-character-background_1270-84.jpg"></div>
+                                         src="https://image.freepik.com/free-vector/doctor-character-background_1270-84.jpg">
+          </div>
           <div class="doctor-quick-details">
             <ul>
               <li class="doctor-name"><a href="#/">Dr. {{doctorSession.fkDoctor.name}}</a> <span
-                  class="doctor-qualifications"></span>
+                class="doctor-qualifications"></span>
               </li>
               <li class="doctor-title">
                 {{doctorSession.fkDoctor.description}}
@@ -66,13 +67,14 @@
       <div class="ui-profile-content">
         <form #inputForm="ngForm">
           <div class="form-group " id="book-name-div">
-            <label for="name" class="col-lg-2 control-label">Patient's Name*</label>
+            <label class="col-lg-2 control-label" for="name">Patient's Name*</label>
             <div class="col-lg-8">
               <div class="input-group">
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="basic-addon5"><em class="fa fa-user text-danger"></em></span>
                 </div>
-                <select id="book-title" class="form-control" name="title" [(ngModel)]="booking.fkCustomer.title" required>
+                <select [(ngModel)]="booking.fkCustomer.title" class="form-control" id="book-title" name="title"
+                        required>
                   <option value="1">Mr.</option>
                   <option value="2">Mrs.</option>
                   <option value="3">Mast.</option>
@@ -90,63 +92,63 @@
                   <option value="17">Hon.</option>
                 </select>
                 <span class="input-group-addon"></span>
-                <input id="book-name" [(ngModel)]="booking.fkCustomer.fname" class="form-control"
-                  placeholder="First Name - Required" name="name" type="text" required>
+                <input [(ngModel)]="booking.fkCustomer.fname" class="form-control" id="book-name"
+                       name="name" placeholder="First Name - Required" required type="text">
                 <span class="input-group-addon"></span>
-                <input id="book-name" [(ngModel)]="booking.fkCustomer.lname" class="form-control"
-                  placeholder="Last Name - Required" name="name" type="text" required>
+                <input [(ngModel)]="booking.fkCustomer.lname" class="form-control" id="book-name"
+                       name="name" placeholder="Last Name - Required" required type="text">
               </div>
             </div>
           </div>
 
           <div class="form-group " id="book-phone-div">
-            <label for="phone" class="col-lg-2 control-label">Mobile *</label>
+            <label class="col-lg-2 control-label" for="phone">Mobile *</label>
             <div class="col-lg-8">
               <div class="input-group">
                 <div class="input-group-prepend">
                   <span class="input-group-text"><em class="fa fa-phone text-danger"></em></span>
                 </div>
-                <input [(ngModel)]="booking.fkCustomer.mobile" id="book-phone" class="form-control"
-                  placeholder="Phone - Required" maxlength="10" name="phone" type="text">
+                <input [(ngModel)]="booking.fkCustomer.mobile" class="form-control" id="book-phone"
+                       maxlength="10" name="phone" placeholder="Phone - Required" type="text">
               </div>
             </div>
           </div>
           <div class="form-group " id="book-passport-div">
-            <label for="passport" class="col-lg-2 control-label">Age</label>
+            <label class="col-lg-2 control-label" for="passport">Age</label>
             <div class="col-lg-8">
               <div class="input-group">
                 <div class="input-group-prepend">
                   <span class="input-group-text"><em class="fa fa-globe text-warning"></em></span>
                 </div>
-                <input id="book-passport" [(ngModel)]="booking.fkCustomer.age" class="form-control" placeholder="Age"
-                  name="passport" type="number" required>
+                <input [(ngModel)]="booking.fkCustomer.age" class="form-control" id="book-passport" name="passport"
+                       placeholder="Age" required type="number">
               </div>
             </div>
           </div>
 
           <div class="form-group " id="book-nic-div">
-            <label for="nic" class="col-lg-2 control-label">NIC / Passport *</label>
+            <label class="col-lg-2 control-label" for="nic">NIC / Passport *</label>
             <div class="col-lg-8">
               <div class="input-group">
                 <div class="input-group-prepend">
                   <span class="input-group-text"><em class="fa fa-certificate text-warning"></em></span>
                 </div>
-                <input id="book-nic" [(ngModel)]="booking.fkCustomer.nic" class="form-control"
-                  placeholder="NIC / Passport - Required" name="nic" type="text">
+                <input [(ngModel)]="booking.fkCustomer.nic" class="form-control" id="book-nic"
+                       name="nic" placeholder="NIC / Passport - Required" type="text">
               </div>
               <span class="help-block" id="nic-validation"></span>
             </div>
           </div>
 
           <div class="form-group " id="book-email-div">
-            <label for="email" class="col-lg-2 control-label">E-mail</label>
+            <label class="col-lg-2 control-label" for="email">E-mail</label>
             <div class="col-lg-8">
               <div class="input-group">
                 <div class="input-group-prepend">
                   <span class="input-group-text"><em class="fa fa-envelope"></em></span>
                 </div>
-                <input id="book-email" [(ngModel)]="booking.fkCustomer.email" class="form-control"
-                  placeholder="E-Mail - Optional" name="email" type="text" required>
+                <input [(ngModel)]="booking.fkCustomer.email" class="form-control" id="book-email"
+                       name="email" placeholder="E-Mail - Optional" required type="text">
               </div>
 
               <span class="help-block" id="email-validation"></span>
@@ -154,7 +156,7 @@
           </div>
 
           <div class="form-group">
-            <label for="running-number" class="col-lg-2 control-label">Ongoing Number</label>
+            <label class="col-lg-2 control-label" for="running-number">Ongoing Number</label>
             <div class="col-lg-8">
               <div class="radio" style="padding-top: 5px;">
                 <label>
@@ -171,8 +173,8 @@
             <label class="col-lg-2 control-label"></label>
             <div class="col-lg-8">
               <div class="input-group" style="border-bottom: 0px;">
-                By clicking "Continue", I agree to the <a href="#" data-toggle="modal" data-target="#terms">Terms &amp;
-                  Conditions</a> in use for Additional Service
+                By clicking "Continue", I agree to the <a data-target="#terms" data-toggle="modal" href="#">Terms &amp;
+                Conditions</a> in use for Additional Service
               </div>
             </div>
           </div>
@@ -181,8 +183,8 @@
 
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
-              <button type="submit" class="btn btn-dialog" id="continue" (click)="createBooking()"><em
-                  class="fa fa-check-square-o fa-fw"></em>
+              <button (click)="createBooking()" class="btn btn-dialog" id="continue" type="submit"><em
+                class="fa fa-check-square-o fa-fw"></em>
                 Continue
               </button>
             </div>

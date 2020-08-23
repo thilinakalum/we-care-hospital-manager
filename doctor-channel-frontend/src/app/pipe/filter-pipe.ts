@@ -1,5 +1,5 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import {isNull, isNullOrUndefined} from 'util';
+import {isNullOrUndefined} from 'util';
 
 @Pipe({
   name: 'filter',

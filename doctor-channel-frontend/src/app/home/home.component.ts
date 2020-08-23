@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {DoctorChannelingService} from '../service/doctor-channeling.service';
 import {Doctor} from '../dto/doctor';
-import {Observable} from 'rxjs';
 import {SearchDoctor} from '../dto/search-doctor';
 import {DoctorCategory} from '../dto/doctor-category';
 

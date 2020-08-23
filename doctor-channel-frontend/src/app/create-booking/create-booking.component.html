@@ -1,20 +1,22 @@
 <div class="row justify-content-center">
   <div class="col-md-8">
-    <div style="text-align: center; margin-top: 250px" *ngIf="lording">
-      <img alt="loader" src="../../assets/loader.gif" height="256" width="256"/>
+    <div *ngIf="lording" style="text-align: center; margin-top: 250px">
+      <img alt="loader" height="256" src="../../assets/loader.gif" width="256"/>
     </div>
 
-    <section class="container-doctors" *ngIf="!lording">
+    <section *ngIf="!lording" class="container-doctors">
       <h3 class="ui-component-note">We Care</h3>
       <div class="ui-profile">
         <div class="doctor-profile">
-          <div class="doctor-photo"><img alt="doctor vector image" src="https://image.freepik.com/free-vector/doctor-character-background_1270-84.jpg"></div>
+          <div class="doctor-photo"><img alt="doctor vector image"
+                                         src="https://image.freepik.com/free-vector/doctor-character-background_1270-84.jpg">
+          </div>
           <div class="doctor-quick-details">
             <ul>
-              <li class="doctor-name" *ngIf="doctor.id==null"><a href="#/">Doctor Not Available !</a>
+              <li *ngIf="doctor.id==null" class="doctor-name"><a href="#/">Doctor Not Available !</a>
                 <span class="doctor-qualifications"></span></li>
               <li class="doctor-title">
-              <li class="doctor-name" *ngIf="doctor.id!=null"><a href="#/">Dr.{{doctor.name}}</a>
+              <li *ngIf="doctor.id!=null" class="doctor-name"><a href="#/">Dr.{{doctor.name}}</a>
                 <span class="doctor-qualifications"></span></li>
               <li class="doctor-title">
                 {{doctor.description}}
@@ -25,11 +27,11 @@
         </div>
       </div>
 
-      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+      <div aria-multiselectable="true" class="panel-group" id="accordion" role="tablist">
         <div class="panel">
-          <div class="panel-heading" role="tab" id="heading-9">
-            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-9"
-               aria-expanded="false" aria-controls="collapse-9">
+          <div class="panel-heading" id="heading-9" role="tab">
+            <a aria-controls="collapse-9" aria-expanded="false" class="collapsed" data-parent="#accordion" data-toggle="collapse"
+               href="#collapse-9" role="button">
               <h4 class="panel-title">
                 <em class="fa fa-stethoscope fa-fw"></em>{{doctor.qualification}}<span class="pull-right"><em
                 class="fa fa-chevron-down fa-fw"></em></span><br>
@@ -37,7 +39,7 @@
               </h4>
             </a>
           </div>
-          <div id="collapse-9" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading-9">
+          <div aria-labelledby="heading-9" class="panel-collapse collapse in" id="collapse-9" role="tabpanel">
             <div class="ui-profile-sessions ui-profile-sessions-list">
               <ul *ngFor="let doctorSession of doctorSessionList">
                 <li>
@@ -61,7 +63,7 @@
                     <div class="ui-component-options">
                       <ul>
                         <li style="margin-left: 50px">
-                          <a (click)="confirmbooking(doctorSession)" class="btn btn-dialog" >
+                          <a (click)="confirmbooking(doctorSession)" class="btn btn-dialog">
                             <em class="fa fa-bookmark-o fa-fw"></em> Channel</a>
                         </li>
                         <li class="session-status">Available</li>
