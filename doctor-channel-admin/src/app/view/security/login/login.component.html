@@ -1,0 +1,39 @@
+<div class="login-box">
+  <div class="login-logo">
+    Doctor Channeling Admin
+  </div>
+  <!-- /.login-logo -->
+  <div class="login-box-body">
+    <p class="login-box-msg">Sign in to start your session</p>
+    <ngx-spinner></ngx-spinner>
+    <form name="form-signin" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+      <div class="alert alert-danger" role="alert" *ngIf="errorMessage">{{errorMessage}}</div>
+      <span id="reauth-email" class="reauth-email"></span>
+
+      <div class="form-group has-feedback" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+        <input type="text" class="form-control" placeholder="USER NAME"
+               d="username" name="username" [(ngModel)]="user.username" #username="ngModel" required>
+        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+        <div *ngIf="f.submitted && !username.valid" class="help-block">User Name is required</div>
+      </div>
+
+      <div class="form-group has-feedback" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+        <input type="password" class="form-control" placeholder="Password" id="password" name="password"
+               [(ngModel)]="user.password"
+               #password="ngModel" required>
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+        <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
+      </div>
+
+      <div class="row">
+        <!-- /.col -->
+        <div class="col-xs-4">
+          <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+        </div>
+        <!-- /.col -->
+      </div>
+    </form>
+  </div>
+  <!-- /.login-box-body -->
+</div>
+<!-- /.login-box -->

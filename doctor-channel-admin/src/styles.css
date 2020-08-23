@@ -1,0 +1,61 @@
+body {
+  font-size: 9pt !important;
+}
+
+.box {
+  border-radius: 0 !important;
+  /*border-top: none;*/
+}
+
+.box-body {
+  border-radius: 0 !important;
+}
+
+.nav-tabs-custom > .nav-tabs > li.active {
+  border-top-color: #00a65a;
+}
+
+.ng-valid[required], .ng-valid.required {
+  border: 1px solid #42A948; /* green */
+}
+
+.ng-invalid:not(form) {
+  border: 1px solid #a94442; /* red */
+}
+
+.padding-10 {
+  padding-left: 5px !important;
+  padding-right: 5px !important;
+}
+
+/* .input-sm {
+  height: 28px !important;
+}
+
+.btn-sm {
+  height: 28px !important;
+} */
+
+.content {
+  height: calc(100vh - 167px) !important;
+}
+
+.large-modal {
+  max-width: none !important;
+}
+
+.input-green {
+  background: #C8E6C9 !important;
+}
+
+table.tableBodyScroll tbody {
+  display: block;
+  max-height: 400px;
+  overflow-y: scroll;
+}
+
+table.tableBodyScroll thead, table.tableBodyScroll tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}

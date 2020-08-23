@@ -1,0 +1,109 @@
+<app-header></app-header>
+<app-navigation></app-navigation>
+<div class="content-wrapper">
+  <section class="content" style="overflow-y:hidden;overflow-x:hidden; height: calc(100vh - 99px) !important;">
+    <div class="content">
+      <div class="row">
+          <ng-snotify></ng-snotify>
+          <ngx-spinner></ngx-spinner>
+        <div class="box">
+          <div class="box-body">
+            <div>
+              <table class="table table-bordered tableBodyScroll">
+                <thead>
+                  <tr>
+                    <th style="width: 10%">#</th>
+                    <th style="width: 15%">Name</th>
+                    <th style="width: 25%">Description</th>
+                    <th style="width: 20%">Qualification</th>
+                    <th style="width: 20%" class="text-right">Category</th>
+                    <th style="width: 10%" class="text-right">   
+                      <button type="submit" class="btn btn-flat btn-success btn-xs"
+                      (click)="new()">NEW
+                    </button>
+                  </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let doctor of doctorList;let rowNo=index;">
+                    <td style="width: 10%">
+                      <span class="badge bg-green">{{doctor.id}}</span>
+                    </td>
+                    <td style="width: 15%">
+                      {{doctor.name}}
+                    </td>
+                    <td style="width: 25%">
+                      {{doctor.description}}
+                    </td>
+                    <td style="width: 20%">
+                      {{doctor.qualification}}
+                    </td>
+                    <td style="width: 20%" class="text-right">
+                      <span class="badge bg-yellow">{{doctor.fkDoctorCategory.name}}</span>
+                    </td>
+                    <td style="width: 10%">
+                      <button type="submit" class="btn btn-flat btn-success btn-xs"
+                        (click)="edit(rowNo,doctor)">EDIT
+                      </button>
+                      <button type="submit" class="btn btn-flat btn-danger btn-xs"
+                        (click)="delete(rowNo,doctor)">DELETE
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ngx-smart-modal #advanceOrderDetail identifier="masterForm">
+      <div class="content">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="box box-success">
+              <div class="box-body">
+                <form #inputForm="ngForm">
+                  <div class="form-group">
+                    <label>Name</label>
+                    <input name="doctor.name" class="form-control input-sm" type="text" [(ngModel)]="doctor.name"
+                      required>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Description</label>
+                    <textarea rows="4" cols="50" name="doctor.description"
+                      class="form-control input-sm" [(ngModel)]="doctor.description" required></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label>Qualification</label>
+                    <textarea rows="4" cols="50" name="doctor.qualification"
+                      class="form-control input-sm" [(ngModel)]="doctor.qualification" required></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label>Category</label>
+                    <select class="form-control input-sm select2" name="doctor.fkDoctorCategory"
+                      [(ngModel)]="doctor.fkDoctorCategory" required>
+                      <option [ngValue]="doctorCategory" *ngFor="let doctorCategory of doctorCategoryList">
+                        {{doctorCategory.name}}
+                      </option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <button type="submit" class="btn btn-flat btn-primary btn-sm" style="margin-top: 25px;"
+                      (click)="save()">SAVE
+                    </button>
+                    <button type="submit" class="btn btn-flat btn-danger btn-sm" style="margin-top: 25px;"
+                      (click)="clear()">CLEAR
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ngx-smart-modal>
+  </section>
+</div>
+<app-footer></app-footer>

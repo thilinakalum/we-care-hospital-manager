@@ -1,0 +1,60 @@
+<app-header></app-header>
+<app-navigation></app-navigation>
+<div class="content-wrapper">
+  <section class="content" style="overflow-y:hidden;overflow-x:hidden; height: calc(100vh - 99px) !important;">
+    <div class="content">
+      <div class="row">
+        <ng-snotify></ng-snotify>
+        <ngx-spinner></ngx-spinner>
+        <div class="box">
+          <div class="box-body">
+            <div>
+              <div class="form-group">
+                <label style="font-size: large;">Doctor :</label>
+                <select class="form-control" (change)="selectOption($event)" [ngModel]="selectedValue">
+                  <option *ngFor="let doctor of doctorList" [ngValue]="doctor.id">{{doctor.name}}</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <table class="table table-bordered tableBodyScroll">
+                <thead>
+                <tr>
+                  <th style="width: 10%">#</th>
+                  <th style="width: 15%">Session Date</th>
+                  <th style="width: 25%">Doctor</th>
+                  <th style="width: 20%">Patient</th>
+                  <th style="width: 15%">Start Time</th>
+                  <th style="width: 15%">End Time</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let details of appointmentDetailsList ;let rowNo=index;">
+                  <td style="width: 10%">
+                    <span class="badge bg-green">{{details.bookingId}}</span>
+                  <td style="width: 15%">
+                    {{details.sessionDate}}
+                  </td>
+                  <td style="width: 25%">
+                    {{details.doctorName}}
+                  </td>
+                  <td style="width: 20%">
+                    {{details.customerName}}
+                  </td>
+                  <td style="width: 15%">
+                    {{details.startTime}}
+                  </td>
+                  <td style="width: 15%">
+                    {{details.endTime}}
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<app-footer></app-footer>

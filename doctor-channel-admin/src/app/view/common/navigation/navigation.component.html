@@ -1,0 +1,34 @@
+<!-- Llogo and sidebar -->
+<aside class="main-sidebar">
+  <!-- sidebar: style can be found in sidebar.less -->
+  <section class="sidebar">
+    <ul class="sidebar-menu" data-widget="tree" data-api="tree" data-accordion="0">
+      <li class="treeview active">
+        <a href="" id="main-functions" [class.active-border]="isMainFunctionsActive()">
+          <i class="fa fa-plus"></i>
+          <span>MASTER</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li [ngClass]="{'treeview': true, 'active': activeMenu == NavigationMenuTypes.MASTER}"
+              (click)="setActiveMenu(NavigationMenuTypes.MASTER)">
+            <a routerLink="/m-doctor">
+              <span>DOCTOR</span>
+            </a>
+          </li>
+        </ul>
+        <ul class="treeview-menu">
+          <li [ngClass]="{'treeview': true, 'active': activeMenu == NavigationMenuTypes.MASTER}"
+              (click)="setActiveMenu(NavigationMenuTypes.MASTER)">
+            <a routerLink="/appointments">
+              <span>APPOINTMENTS</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+  <!-- /.sidebar -->
+</aside>
