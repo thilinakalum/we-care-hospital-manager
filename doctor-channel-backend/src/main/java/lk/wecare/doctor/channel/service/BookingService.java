@@ -98,8 +98,6 @@ public class BookingService {
 
       List<Object[]> bookingList = bookingRepository.getAppointmentsByDate(startDate, endDate);
 
-      System.out.println("BOOKING LIST : " + bookingList.size());
-
       if (!bookingList.isEmpty()) {
 
         for (Object[] object : bookingList) {
