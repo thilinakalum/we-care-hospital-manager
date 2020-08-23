@@ -1,6 +1,6 @@
 <div class="bd-example" >
   <div style="text-align: center; margin-top: 250px" *ngIf="lording">
-    <img src="../../assets/loader.gif" height="256" width="256"/>
+    <img alt="loader" src="../../assets/loader.gif" height="256" width="256"/>
   </div>
   <div *ngIf="!lording">
     <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
@@ -36,7 +36,7 @@
             <h2>Find a Doctor. Book an Appointment. Pay easy.</h2>
             <div class="input-group">
               <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1"><i class="fa fa-user-md"></i></span>
+                <span class="input-group-text" id="basic-addon1"><em class="fa fa-user-md"></em></span>
               </div>
               <select class="custom-select" (change)="changeDoctor($event)" [(ngModel)]="searchDoctor.doctor"
                       name="doctor">
@@ -49,7 +49,7 @@
             </div>
             <div class="input-group" style="margin-top: 10px">
               <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon4"><i class="fa fa-plus-square"></i></span>
+                <span class="input-group-text" id="basic-addon4"><em class="fa fa-plus-square"></em></span>
               </div>
               <select class="custom-select" (change)="changeDoctorCategory($event)" name="doctorCategory"
                       [(ngModel)]="searchDoctor.doctorCategory">
@@ -60,12 +60,12 @@
             </div>
             <div class="input-group" style="margin-top: 10px">
               <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon5"><i class="fa fa-calendar-minus-o"></i></span>
+                <span class="input-group-text" id="basic-addon5"><em class="fa fa-calendar-minus-o"></em></span>
               </div>
               <input type="date" class="form-control" name="date" [(ngModel)]="searchDoctor.date">
             </div>
             <button type="button" (click)="search()" class="col-12 btn btn-danger" style="margin-top: 10px">
-              <i class="fa fa-search"></i> Search
+              <em class="fa fa-search"></em> Search
             </button>
           </form>
         </div>

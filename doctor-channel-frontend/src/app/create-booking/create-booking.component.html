@@ -1,14 +1,14 @@
 <div class="row justify-content-center">
   <div class="col-md-8">
     <div style="text-align: center; margin-top: 250px" *ngIf="lording">
-      <img src="../../assets/loader.gif" height="256" width="256"/>
+      <img alt="loader" src="../../assets/loader.gif" height="256" width="256"/>
     </div>
 
     <section class="container-doctors" *ngIf="!lording">
       <h3 class="ui-component-note">We Care</h3>
       <div class="ui-profile">
         <div class="doctor-profile">
-          <div class="doctor-photo"><img src="https://image.freepik.com/free-vector/doctor-character-background_1270-84.jpg"></div>
+          <div class="doctor-photo"><img alt="doctor vector image" src="https://image.freepik.com/free-vector/doctor-character-background_1270-84.jpg"></div>
           <div class="doctor-quick-details">
             <ul>
               <li class="doctor-name" *ngIf="doctor.id==null"><a href="#/">Doctor Not Available !</a>
@@ -31,8 +31,8 @@
             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-9"
                aria-expanded="false" aria-controls="collapse-9">
               <h4 class="panel-title">
-                <i class="fa fa-stethoscope fa-fw"></i>{{doctor.qualification}}<span class="pull-right"><i
-                class="fa fa-chevron-down fa-fw"></i></span><br>
+                <em class="fa fa-stethoscope fa-fw"></em>{{doctor.qualification}}<span class="pull-right"><em
+                class="fa fa-chevron-down fa-fw"></em></span><br>
                 <small>{{doctorSessionList.length}} Sessions</small>
               </h4>
             </a>
@@ -62,7 +62,7 @@
                       <ul>
                         <li style="margin-left: 50px">
                           <a (click)="confirmbooking(doctorSession)" class="btn btn-dialog" >
-                            <i class="fa fa-bookmark-o fa-fw"></i> Channel</a>
+                            <em class="fa fa-bookmark-o fa-fw"></em> Channel</a>
                         </li>
                         <li class="session-status">Available</li>
                       </ul>
