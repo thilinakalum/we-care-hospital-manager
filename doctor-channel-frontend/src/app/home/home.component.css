@@ -1,0 +1,14 @@
+.search-box {
+  /*background: rgb(0, 0, 0);*/
+  background: rgba(0, 0, 0, 0.4);
+  color: #f1f1f1;
+  margin-top: -868px;
+  margin-right: 30px;
+}
+
+.make-appointment h2 {
+  padding-top: 50px;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+  font-size: 21px;
+}

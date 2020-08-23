@@ -1,0 +1,1928 @@
+html, body
+{
+  height: 100%;
+}
+
+body
+{
+  font-family: 'Ubuntu', sans-serif;
+  width: 100%;
+  background:#F2F2F2;
+  color: #555555;
+  height: 100%;
+}
+
+.banner
+{
+  text-align: center;
+  width: 100%;
+  color: #FFFFFF;
+  /*background: #FFFFFF url("../charactors.png") bottom right no-repeat;*/
+  position: relative;
+  display:block;
+  overflow: auto;
+}
+
+.banner .logo
+{
+  /*background: url("../logo.png?v2") no-repeat;*/
+  display:block;
+  width: 350px;
+  height: 149px;
+  margin-bottom: 40px;
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px)
+{
+  .banner
+  {
+    background: #FFFFFF;
+  }
+
+  .banner .logo
+  {
+    /*background: url("../logo.png?v2") center center no-repeat;*/
+    width: 100%;
+    background-size:30%;
+    height: 110px;
+    margin-bottom: 0;
+  }
+}
+
+.footer
+{
+  border-top: 30px solid #939393;
+  text-align: center;
+  width: 100%;
+  color: #FFFFFF;
+  background: #f2f2f2;
+  position: relative;
+  display:block;
+}
+
+.footer-navigation .nav
+{
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+
+.footer-navigation .navbar-social.nav > li
+{
+  display: inline-block;
+  position: relative;
+}
+
+.footer-copyright .nav
+{
+  text-transform: uppercase;
+  font-size: 0.8em;
+}
+
+.btn-main-search,
+.btn-dialog
+{
+  background-color: #E92B2B;
+  border-color: #D43F3A;
+  color: #FFFFFF;
+}
+
+.btn-main-search:hover,
+.btn-main-search:focus,
+.btn-main-search:active,
+.btn-dialog:hover,
+.btn-dialog:focus,
+.btn-dialog:active
+{
+  background-color: #555555;
+  border-color: #666666;
+  color: #FFFFFF;
+}
+
+
+.btn-orange
+{
+  background-color: #FF6600;
+  border-color: #E65C00;
+  color: #FFFFFF;
+}
+
+.btn-orange:hover,
+.btn-orange:focus,
+.btn-orange:active
+{
+  background-color: #FF751A;
+  border-color: #FF6600;
+  color: #FFFFFF;
+}
+
+.input-group
+{
+  margin-bottom: 15px;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
+{
+  font-family: 'Ubuntu', sans-serif;
+}
+
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small
+{
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.alert
+{
+  border-radius: 0;
+  margin-bottom: 0;
+}
+.text-warning
+{
+  color: #F0AD4E;
+}
+
+.text-danger
+{
+  color: #D43F3A;
+}
+
+a
+{
+  color: #E92B2B;
+  font-weight: normal;
+}
+
+a:hover,
+a:focus
+{
+  color: #555555;
+  text-decoration:none;
+}
+
+textarea.form-control
+{
+  font-size: 12px;
+}
+
+.footer a
+{
+  color: #888888;
+  font-weight: normal;
+}
+
+.footer a:hover,
+.footer a:focus
+{
+  color: #E92B2B;
+  text-decoration:none;
+}
+
+.dl-horizontal > dd:after
+{
+  display: table;
+  content: "";
+  clear: both;
+}
+
+
+.btn-inverse
+{
+  background-color: #000000;
+  border-color: #555555;
+  color: #FFFFFF;
+}
+
+/** Android **/
+
+select
+{
+  -webkit-appearance: listbox;
+}
+
+.collapsing { transition: none; }
+
+/* Nav bar **/
+
+.navbar-default {
+  background-color: #EE2128;
+  border-color: #E41118;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+.navbar-default .navbar-brand
+{
+  color: #FFFFFF;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus
+{
+  background-color: rgba(0, 0, 0, 0);
+  color: #F2F2F2;
+}
+.navbar-default .navbar-text
+{
+  color: #FFFFFF;
+}
+.navbar-default .navbar-nav > li > a
+{
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  font-weight: 600;
+  color: #FFFFFF;
+
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus
+{
+  background-color: rgba(0, 0, 0, 0);
+  color: #F2F2F2;
+}
+
+
+
+.navbar-default .navbar-nav > li > a::before,
+.navbar-default .navbar-nav > li > a::after {
+  display: inline-block;
+  opacity: 0;
+  -webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+  -moz-transition: -moz-transform 0.3s, opacity 0.2s;
+  transition: transform 0.3s, opacity 0.2s;
+}
+
+.navbar-default .navbar-nav > li > a::before {
+  margin-right: 2px;
+  content: '[';
+  -webkit-transform: translateX(20px);
+  -moz-transform: translateX(20px);
+  transform: translateX(20px);
+}
+
+.navbar-default .navbar-nav > li > a::after {
+  margin-left: 2px;
+  content: ']';
+  -webkit-transform: translateX(-20px);
+  -moz-transform: translateX(-20px);
+  transform: translateX(-20px);
+}
+
+.navbar-default .navbar-nav > li > a:hover::before,
+.navbar-default .navbar-nav > li > a:hover::after,
+.navbar-default .navbar-nav > li > a:focus::before,
+.navbar-default .navbar-nav > li > a:focus::after {
+  opacity: 1;
+  -webkit-transform: translateX(0px);
+  -moz-transform: translateX(0px);
+  transform: translateX(0px);
+}
+
+
+
+
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus
+{
+  background-color: #FFFFFF;
+  color: #FFFFFF;
+  padding: 10px 15px;
+  margin: 5px;
+}
+.navbar-default .navbar-nav > .disabled > a,
+.navbar-default .navbar-nav > .disabled > a:hover,
+.navbar-default .navbar-nav > .disabled > a:focus
+{
+  background-color: rgba(0, 0, 0, 0);
+  color: #CCCCCC;
+}
+.navbar-default .navbar-toggle
+{
+  border-color: #DDDDDD;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus
+{
+  background-color: #DDDDDD;
+}
+.navbar-default .navbar-toggle .icon-bar
+{
+  background-color: #CCCCCC;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form
+{
+  border-color: #E7E7E7;
+}
+.navbar-default .navbar-nav > .dropdown > a:hover .caret,
+.navbar-default .navbar-nav > .dropdown > a:focus .caret
+{
+  border-bottom-color: #333333;
+  border-top-color: #333333;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus
+{
+  background-color: #E7E7E7;
+  color: #555555;
+}
+.navbar-default .navbar-nav > .open > a .caret,
+.navbar-default .navbar-nav > .open > a:hover .caret,
+.navbar-default .navbar-nav > .open > a:focus .caret
+{
+  border-bottom-color: #555555;
+  border-top-color: #555555;
+}
+.navbar-default .navbar-nav > .dropdown > a .caret
+{
+  border-bottom-color: #FFFFFF;
+  border-top-color: #FFFFFF;
+}
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #FFFFFF;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus
+  {
+    background-color: rgba(0, 0, 0, 0);
+    color: #333333;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus
+  {
+    background-color: #E7E7E7;
+    color: #555555;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a,
+  .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus
+  {
+    background-color: rgba(0, 0, 0, 0);
+    color: #CCCCCC;
+  }
+}
+.navbar-default .navbar-link
+{
+  color: #FFFFFF;
+}
+.navbar-default .navbar-link:hover
+{
+  color: #333333;
+}
+
+
+
+.powered-by
+{
+  text-transform: uppercase;
+  font-size: 0.7em;
+  font-weight: normal;
+  color: #FFFFFF;
+  padding: 15px;
+}
+
+.powered-by a
+{
+  text-decoration: none;
+  color: #FF0000;
+}
+
+
+.make-appointment
+{
+  padding-top: 80px;
+  margin-left: 40px;
+  width: 400px;
+}
+
+.make-appointment h2
+{
+  color: #EE2128;
+  margin-bottom: 20px;
+  font-size: 21px;
+}
+
+.container-appointment
+{
+  padding: 10px 20px 20px 20px;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+
+
+/* Large desktop */
+@media (min-width: 1900px)
+{
+  .make-appointment
+  {
+    padding-top: 250px;
+    margin-left: 350px;
+    width: 500px;
+  }
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px)
+{
+  .make-appointment
+  {
+    margin: auto;
+    padding-top: 180px;
+    width: 95%;
+  }
+  .make-appointment h2
+  {
+    text-align:center;
+  }
+  .make-appointment h2:before
+  {
+    content: "";
+  }
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px)
+{
+  .make-appointment
+  {
+    margin: auto;
+    padding-top: 40px;
+    width: 95%;
+  }
+  .make-appointment h2
+  {
+    text-align:center;
+    font-size: 23px;
+  }
+}
+
+
+
+.navbar-brand i
+{
+  -moz-transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.navbar-brand:hover i
+{
+  -moz-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+
+/** UI Components **/
+.ui-component-title
+{
+  font-size: 0.8em;
+  text-transform: uppercase;
+  background: #F2F2F2;
+  color: #555555;
+  padding: 10px;
+  margin: 0;
+  border: 1px solid #D1D1D1;
+  text-shadow: 2px 2px 4px;
+}
+
+.ui-component-note
+{
+  font-size: 12px;
+  text-transform: uppercase;
+  background: #F2F2F2;
+  color: #777777;
+  padding: 10px;
+  margin: 0;
+  border: 1px solid #D1D1D1;
+}
+
+.ui-component-subtitle
+{
+  font-size: 0.8em;
+  text-transform: uppercase;
+  background: #FFFFFF;
+  color: #555555;
+  padding: 10px;
+  margin: 10px;
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.panel
+{
+  background: none;
+  padding:0;
+  margin:0;
+  border:0;
+  border-radius:0;
+  box-shadow:none;
+}
+
+.panel-heading
+{
+  text-transform: uppercase;
+  background: #ffffff;
+  color: #E92B2B;
+  border: 0;
+  border-left: 4px solid #999999;
+  border-radius:0;
+  margin: 10px;
+  padding: 0;
+}
+
+.panel-heading h4
+{
+  font-weight: 100;
+  font-size: 1em;
+  padding: 10px;
+}
+
+.panel-heading h4 small
+{
+  margin-left: 20px;
+  color: #666666;
+}
+
+.ui-component-list
+{
+  list-style: none;
+  margin:0;
+  padding: 0;
+}
+
+.ui-component-list:before,
+.ui-component-list:after
+{
+  display: table;
+  content: " ";
+  clear: both;
+}
+
+.ui-component-list > li
+{
+  margin:0
+}
+
+.ui-component
+{
+  border-bottom: 1px solid #E6E6E6;
+  border-left: 4px solid #FFFFFF;
+  background: #FFFFFF;
+  padding: 6px;
+  position:relative;
+  clear:both;
+}
+
+.ui-component:hover,
+.ui-component:active,
+.ui-component:active
+{
+  background: #FFF5E5;
+}
+
+
+.ui-component:before,
+.ui-component:after
+{
+  display: table;
+  content: " ";
+  clear: both;
+}
+
+.ui-component > ul
+{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ui-component-content
+{
+  display:table-cell;
+}
+
+.ui-component-options
+{
+  display:table-cell;
+  font-size: 1.2em;
+  vertical-align: middle;
+}
+
+.ui-component-options > ul
+{
+  list-style: none;
+  margin:0;
+  padding:0;
+}
+
+.ui-component-options > ul > li
+{
+  display: inline-block;
+  padding: 10px;
+}
+
+.ui-component-channel-options > ul > li
+{
+  padding: 0px;
+}
+
+.ui-component-inverse
+{
+  border-left: 4px solid #444444;
+}
+.ui-component-inverse a
+{
+  color: #FFFFFF;
+}
+.ui-component-inverse a:hover,
+.ui-component-inverse a:focus,
+.ui-component-inverse a:active
+{
+  color: #F2F2F2;
+}
+.tooltip
+{
+  text-transform: uppercase;
+  font-size: 0.7em;
+}
+
+@media (min-width: 1200px) {
+
+  .ui-component-list > li
+  {
+    width: 50%;
+    float:left;
+  }
+}
+
+
+@media screen and (max-width: 480px)
+{
+  .ui-component-title
+  {
+    text-align:center;
+  }
+
+  .ui-component-note
+  {
+    text-align:center;
+  }
+
+  .ui-component-options
+  {
+    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.9);
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    display:none;
+  }
+
+  .ui-show-options .ui-component-options
+  {
+    opacity: 1;
+    display:block;
+
+    -webkit-animation: fadein 0.5s;
+    -moz-animation: fadein 0.5s;
+    -ms-animation: fadein 0.5s;
+    -o-animation: fadein 0.5s;
+    animation: fadein 0.5s;
+  }
+
+  .ui-component-options > ul
+  {
+    height: 100%;
+    display:table;
+    width: 100%;
+  }
+
+  .ui-component-channel-options > ul
+  {
+    vertical-align: middle;
+  }
+
+  .ui-component-options > ul > li
+  {
+    padding: 10px;
+    display:table-cell;
+    vertical-align: middle;
+    font-size: 1.2em;
+  }
+
+  .ui-component-channel-options > ul > li
+  {
+    padding: 0px;
+  }
+
+  .ui-component *,
+  .ui-component li a
+  {
+    -webkit-touch-callout:none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+}
+
+
+
+/** Doctors UI - Index  **/
+
+.ui-component .doctor-photo
+{
+  display:table-cell;
+  margin-right: 5px;
+}
+
+.ui-component .doctor-photo img
+{
+  height: 50px;
+  width: 50px;
+  border-radius: 2px;
+  border: 1px solid #F1F1F1;
+  padding:4px;
+}
+
+.ui-component .doctor-quick-details
+{
+  display:table-cell;
+  vertical-align: top;
+  width: 380px;
+}
+
+.ui-component .doctor-quick-details > ul
+{
+  list-style: none;
+  padding:0;
+  margin:0 10px;
+}
+
+
+.ui-component .doctor-name
+{
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+.ui-component .doctor-title
+{
+  font-size: 0.8em;
+}
+
+
+
+@media (min-width: 1200px)
+{
+
+  .ui-component .doctor-quick-details
+  {
+    width: 380px;
+  }
+}
+
+
+/** Doctors UI - Profile **/
+
+.ui-profile
+{
+  margin: 10px;
+  background: #FFFFFF;
+  padding: 5px;
+}
+
+.ui-profile .doctor-profile
+{
+  display:table;
+}
+
+.ui-profile .doctor-photo
+{
+  display:table-cell;
+}
+
+.ui-profile .doctor-photo img
+{
+  height: 120px;
+  width: 120px;
+  border-radius: 2px;
+  border: 1px solid #F1F1F1;
+  padding: 5px;
+}
+
+.ui-profile .doctor-quick-details
+{
+  display:table-cell;
+  vertical-align: top;
+}
+
+.ui-profile .doctor-quick-details > ul
+{
+  list-style: none;
+  padding: 0;
+  margin: 0 10px;
+}
+
+
+.ui-profile .doctor-name
+{
+  font-size: 1.5em;
+}
+
+.ui-profile .doctor-title
+{
+  font-size: 1em;
+}
+
+.ui-profile-nav > ul
+{
+  background: #FFFFFF;
+  margin: 0 10px;
+  border-radius: 2px;
+  border: 1px solid #F1F1F1;
+  padding: 0;
+  list-style: none;
+}
+
+.ui-profile-nav > ul > li
+{
+  display: inline-block;
+}
+
+.ui-profile-nav > ul > li > a
+{
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1em;
+  border-right: 1px solid #F2f2f2;
+  text-transform: uppercase;
+}
+
+.ui-profile-nav > ul > li.active > a
+{
+  background: #E92B2B;
+  color: #FFFFFF;
+}
+
+.ui-profile .doctor-qualifications
+{
+  font-size: 0.5em;
+  vertical-align: middle;
+}
+
+.ui-profile-content
+{
+  border: 1px solid #F1F1F1;
+  margin: 10px;
+  background: #FFFFFF;
+  padding: 5px;
+}
+
+.ui-profile-content > ul
+{
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+.ui-profile-content
+{
+  margin: 10px;
+  padding:0;
+}
+
+.ui-profile-hospitals > ul .fa-stack
+{
+  margin: 10px;
+}
+
+.ui-profile-hospitals > ul > li a
+{
+  display: block;
+}
+
+.ui-profile-hospitals > ul > li
+{
+  border-bottom: 1px solid #F2F2F2;
+  font-size: 0.9em;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.ui-profile-hospitals > ul > li:last-child
+{
+  border-bottom: 0;
+}
+
+@media screen and (max-width: 480px)
+{
+  .ui-profile
+  {
+    border-radius: 2px;
+    border: 1px solid #F1F1F1;
+    padding: 5px;
+  }
+
+  .ui-profile .doctor-profile
+  {
+    display:block;
+    text-align:center;
+  }
+
+  .ui-profile .doctor-photo
+  {
+    display:block;
+  }
+
+  .ui-profile .doctor-photo img
+  {
+    height: 150px;
+    width: 150px;
+  }
+
+  .ui-profile .doctor-quick-details
+  {
+    display:block;
+  }
+
+  .ui-profile .doctor-qualifications
+  {
+    display:block;
+    margin-bottom: 4px;
+  }
+
+  .ui-profile-nav > ul
+  {
+    text-align: center;
+  }
+
+  .ui-profile-nav > ul > li > a
+  {
+    font-size: 1.3em;
+  }
+
+  .ui-profile-nav > ul > li > a span
+  {
+    display:none;
+  }
+}
+
+
+/** UI Components **/
+
+.ui-component-primary
+{
+  border-left: 4px solid #E92B2B;
+}
+.ui-component-primary .session-time
+{
+  color: #E92B2B;
+}
+.ui-component-primary .session-active-count
+{
+  color: #E92B2B;
+}
+.ui-component-primary a
+{
+  color: #F07070;
+}
+.ui-component-primary a:hover,
+.ui-component-primary a:focus,
+.ui-component-primary a:active
+{
+  color: #E92B2B;
+}
+.ui-component-primary a.btn
+{
+  color: #FFFFFF;
+}
+.ui-component-orange
+{
+  border-left: 4px solid #FF6600;
+}
+.ui-component-orange .session-time
+{
+  color: #FF6600;
+}
+.ui-component-orange .session-active-count
+{
+  color: #FF6600;
+}
+.ui-component-orange a
+{
+  color: #FF6600;
+}
+.ui-component-orange a:hover,
+.ui-component-orange a:focus,
+.ui-component-orange a:active
+{
+  color: #FF8533;
+}
+.ui-component-orange a.btn
+{
+  color: #FFFFFF;
+}
+.ui-component:hover,
+.ui-component:active,
+.ui-component:active
+{
+  background: #FDFAF5;
+}
+.ui-component-warning
+{
+  border-left: 4px solid #f0ad4e;
+}
+.ui-component-warning .session-time
+{
+  color: #f0ad4e;
+}
+.ui-component-warning .session-active-count
+{
+  color: #f0ad4e;
+}
+.ui-component-warning a
+{
+  color: #f0ad4e;
+}
+.ui-component-warning a:hover,
+.ui-component-warning a:focus,
+.ui-component-warning a:active
+{
+  color: #EB961E;
+}
+.ui-component-warning a.btn
+{
+  color: #FFFFFF;
+}
+
+/** Session UI - Index  **/
+
+.ui-profile-sessions > ul
+{
+  list-style:none;
+  margin: 10px;
+  padding:0;
+  font-weight: 300;
+}
+.ui-profile-sessions .ui-component-content
+{
+  vertical-align: middle;
+}
+.ui-profile-sessions > ul > li
+{
+  display:block;
+}
+
+.ui-component .session-counter
+{
+  display:table-cell;
+  /*font-size: 2.1em;*/
+  vertical-align: middle;
+  text-align: center;
+  min-width: 50px;
+}
+.ui-component .session-counter > ul
+{
+  list-style: none;
+  padding:0;
+  margin:0;
+}
+
+.ui-component .session-active-title
+{
+  font-size: 0.9em;
+  text-transform: uppercase;
+}
+
+.ui-component .session-active-count
+{
+  font-size: 1.4em;
+  text-transform: uppercase;
+}
+
+.ui-component .session-quick-details
+{
+  display:table-cell;
+  vertical-align: top;
+  width: 200px;
+}
+
+.ui-component .session-quick-details > ul
+{
+  list-style: none;
+  padding:0;
+  margin:0 10px;
+}
+
+.ui-component .session-date
+{
+  font-size: 0.9em;
+  text-transform: uppercase;
+}
+
+.ui-component .session-time
+{
+  font-size: 1.4em;
+  text-transform: uppercase;
+}
+
+.ui-component .session-status
+{
+  font-size: 0.9em;
+  text-transform: uppercase;
+}
+
+
+
+@media screen and (max-width: 480px)
+{
+  .ui-profile-sessions .ui-component-options
+  {
+    text-align: left;
+  }
+}
+
+/** Booking **/
+
+.container-sessions .ui-profile-sessions > ul > li
+{
+  display: block;
+}
+
+
+.container-sessions label
+{
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+
+.container-sessions dt
+{
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  padding: 5px;
+  width: 220px;
+}
+
+.container-sessions dd
+{
+  color: #555555;
+  margin-left: 240px;
+  padding: 3px;
+}
+
+@media screen and (max-width: 480px)
+{
+  .container-sessions dt
+  {
+    font-weight: 300;
+    font-size: 0.7em;
+    padding: 12px 8px 0;
+  }
+
+  .container-sessions dd
+  {
+    margin: 0 5px;
+  }
+}
+
+
+/** Reports Tables **/
+
+.ui-component-report table th
+{
+  text-transform: uppercase;
+  font-weight: 300;
+
+}
+
+/** Print CSS */
+
+.ui-print-note,
+.ui-print-logo,
+.ui-print-receipt-note,
+.ui-print-terms-conditions,
+.ui-print-hospital-details,
+.ui-print-terms-conditions-pos
+{
+  display:none;
+}
+
+/** ui header search **/
+
+.ui-header
+{
+  background:#FFFFFF;
+  padding-top: 10px;
+}
+
+.ui-search-section,
+.ui-header-search
+{
+  display:inline-block;
+  vertical-align: middle;
+}
+
+.ui-header-logo,
+.ui-header-note
+{
+  display:none;
+}
+
+.ui-header-search
+{
+  width: 100%;
+  text-align:center;
+}
+
+.ui-header-search .ui-search-section
+{
+  width: 45%;
+}
+
+@media (min-width: 1200px)
+{
+  .ui-header
+  {
+    background:#FFFFFF;
+    padding-top: 0;
+  }
+
+  .ui-header-logo,
+  .ui-header-note
+  {
+    display:inline-block;
+    vertical-align: middle;
+  }
+
+  .ui-header-logo
+  {
+    margin-top: -50px;
+    display:inline-block;
+    position: relative;
+    z-index: 1030;
+  }
+
+  .ui-header-note
+  {
+    width: 20%;
+    padding: 8px;
+  }
+
+  .ui-header-note h2
+  {
+    color: #EE2128;
+    font-size: 18px;
+  }
+
+  .ui-header-search
+  {
+    width: 60%;
+    text-align:right;
+  }
+
+  .ui-header-search .input-group
+  {
+    margin: 5px;
+  }
+}
+
+@media screen and (max-width: 480px)
+{
+  .ui-header
+  {
+    display:none;
+  }
+}
+
+/** Scroller **/
+
+.container-scroll-doctors
+{
+  padding-left: 150px;
+  /*background: url("../logo.png?v2") 20px 20px fixed no-repeat;*/
+}
+
+.container-scroll-doctors .ui-component-doctor
+{
+  font-size: 1.2em;
+  text-transform: uppercase;
+  list-style:none;
+  color: #555555;
+  padding: 10px;
+  margin: 0;
+}
+
+.container-scroll-doctors .ui-component-specialization
+{
+  font-size: 0.9em;
+  text-transform: uppercase;
+  background: #FFFFFF;
+
+  color: #ee2128;
+  padding: 10px;
+  margin: 0;
+  border: 1px solid #D1D1D1;
+}
+
+/** Forms **/
+
+.form-horizontal
+{
+  margin-top: 15px;
+}
+
+.form-horizontal .form-group
+{
+  margin:0;
+  margin-bottom: 5px;
+}
+
+/** Payment options **/
+.payment-method-options
+{
+  display:none;
+}
+
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@-moz-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@-webkit-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@-ms-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.jst-hours {
+  float: left;
+}
+.jst-minutes {
+  float: left;
+}
+.jst-seconds {
+  float: left;
+}
+.jst-clearDiv {
+  clear: both;
+}
+.jst-timeout
+{
+  color: red;
+}
+
+.time-example
+{
+  position: fixed;
+  top:0;
+}
+
+.pending-time
+{
+  padding-left: 400px;
+  font-weight: 500;
+  color: #E92B2B;
+}
+.timer-quick
+{
+  padding-left: 34px;
+  font-size: large;
+}
+
+@media (max-width :  1024px)
+{
+  .pending-time
+  {
+    border: none;
+    position: absolute;
+    top: 0px;
+    right: -5px;
+  }
+}
+
+/* Doctor Suggestions */
+
+.tt-menu,
+.gist {
+  text-align: left;
+}
+.typeahead,
+.tt-query,
+.tt-hint {
+  width: 396px;
+  height: 30px;
+  padding: 8px 12px;
+  font-size: 14px;
+  line-height: 16px;
+  border: 2px solid #ccc;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  outline: none;
+}
+.typeahead {
+  background-color: #fff;
+}
+
+.typeahead:focus {
+  border: 2px solid #0097cf;
+}
+.tt-query {
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.tt-hint {
+  color: #999
+}
+
+.tt-menu {
+  width: 342px;
+  max-height: 125px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  margin: 0px 0;
+  padding: 8px 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+  -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+  box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+
+@media (max-width: 440px)
+{
+  .tt-menu {
+    width: 250px;
+  }
+}
+
+.tt-suggestion {
+  padding: 3px 20px;
+  font-size: 14px;
+  line-height: 16px;
+  color: #555555;
+}
+
+.tt-suggestion:hover {
+  cursor: pointer;
+  color: #fff;
+  background-color: #ed2227;
+}
+
+.tt-suggestion.tt-cursor {
+  color: #fff;
+  background-color: #0097cf;
+
+}
+
+.tt-suggestion p {
+  margin: 0;
+}
+
+.gist {
+  font-size: 14px;
+}
+
+@media (max-width :  1024px)
+{
+  .pending-time
+  {
+    border: none;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
+  .timer-quick
+  {
+    font-size: smaller;
+  }
+}
+
+@media (max-width :  350px)
+{
+  /*	.ui-component-content
+        {
+            width: 160px;
+        }*/
+}
+@media(max-width : 335px)
+{
+  .timer-mobile
+  {
+    display: none;
+  }
+}
+@media (max-width :  480px)
+{
+  .mobile-timer
+  {
+    padding-left: 200px;
+  }
+  .ui-component .session-quick-details
+  {
+    width: 150px;
+  }
+}
+
+/*
+ Start Show Filter
+*/
+#index-search input#appointment-date::-webkit-input-placeholder{
+  color: #555555;
+}
+#index-search input#appointment-date::-moz-placeholder{
+  color: #555555;
+}
+#index-search input#appointment-date::-ms-input-placeholder{
+  color: #555555;
+}
+#index-search input#appointment-date::-moz-placeholder{
+  color: #555555;
+}
+#show-filters > a{
+  color: #FDA61F;
+}
+#hide-filters > a{
+  color: #FDA61F;
+}
+#show-filters > a:hover{
+  color: #ed2227;
+}
+#hide-filters > a:hover{
+  color: #ed2227;
+}
+/*
+ End Show Filter
+*/
+
+/*
+ Start Session status and book button
+*/
+@media (max-width :  640px)
+{
+  .ui-component{
+    padding: 0px;
+  }
+  .ui-component .session-quick-details{
+    width: 122px;
+  }
+  .ui-component .session-quick-details > ul{
+    margin: 0 5px;
+  }
+  .ui-component .session-date{
+    font-size: 0.9em;
+  }
+  .ui-component .session-time{
+    font-size: 1.1em;
+  }
+  .ui-component .session-active-title{
+    font-size: 0.9em;
+  }
+  .ui-component .session-active-count{
+    font-size: 1.1em;
+  }
+  .ui-profile-sessions .ui-component-options
+  {
+    text-align: left;
+  }
+  .ui-component-options{
+    width: 250px;
+    background: unset;
+    position: unset;
+    opacity: 1;
+    display: table-cell;
+    font-size: 1.2em;
+    padding-left: 0px;
+  }
+  .ui-component-channel-options{
+    vertical-align: middle;
+  }
+  .ui-component-options > ul > li{
+    padding-bottom: 5px;
+    display: inline-block;
+    font-size: 1.2em;
+  }
+  .ui-component-channel-options > ul > li{
+    padding-bottom: 0px;
+    display: table-cell;
+  }
+  .ui-component .session-status{
+    padding-top: 5px;
+    font-size: 0.8em;
+    display: inline-block;
+  }
+}
+@media (max-width :  540px)
+{
+  .ui-component{
+    padding: 0px;
+  }
+  .ui-component .session-quick-details{
+    width: 122px;
+  }
+  .ui-component .session-quick-details > ul{
+    margin: 0 5px;
+  }
+  .ui-component .session-date{
+    font-size: 0.9em;
+  }
+  .ui-component .session-time{
+    font-size: 1.1em;
+  }
+  .ui-component .session-active-title{
+    font-size: 0.9em;
+  }
+  .ui-component .session-active-count{
+    font-size: 1.1em;
+  }
+  .ui-profile-sessions .ui-component-options
+  {
+    text-align: left;
+  }
+  .ui-component-options{
+    width: 250px;
+    background: unset;
+    position: unset;
+    opacity: 1;
+    display: table-cell;
+    font-size: 1.2em;
+    padding-left: 0px;
+  }
+  .ui-component-channel-options{
+    vertical-align: middle;
+  }
+  .ui-component-options > ul > li{
+    padding-bottom: 5px;
+    display: inline-block;
+    font-size: 1.2em;
+  }
+  .ui-component-channel-options > ul > li{
+    padding-bottom: 0px;
+    display: table-cell;
+  }
+  .ui-component .session-status{
+    padding-top: 5px;
+    font-size: 0.6em;
+    display: inline-block;
+  }
+}
+@media (max-width :  500px)
+{
+  .ui-component{
+    padding: 0px;
+  }
+  .ui-component .session-quick-details{
+    width: 122px;
+  }
+  .ui-component .session-quick-details > ul{
+    margin: 0 5px;
+  }
+  .ui-component .session-date{
+    font-size: 0.9em;
+  }
+  .ui-component .session-time{
+    font-size: 1.1em;
+  }
+  .ui-component .session-active-title{
+    font-size: 0.9em;
+  }
+  .ui-component .session-active-count{
+    font-size: 1.1em;
+  }
+  .ui-profile-sessions .ui-component-options
+  {
+    text-align: center;
+  }
+  .ui-component-options{
+    width: 118px;
+    background: unset;
+    position: unset;
+    opacity: 1;
+    display: table-cell;
+    font-size: 1.2em;
+    padding-left: 0px;
+  }
+  .ui-component-channel-options{
+    vertical-align: middle;
+  }
+  .ui-component-options > ul > li{
+    padding-bottom: 0px;
+    display: inline-block;
+    font-size: 1.2em;
+  }
+  .ui-component-channel-options > ul > li{
+    display: table-cell;
+  }
+  .ui-component .session-status{
+    padding-top: 0px;
+    font-size: 0.6em;
+    display: inline-block;
+  }
+}
+@media (max-width :  480px)
+{
+  .ui-component{
+    padding: 0px;
+  }
+  .ui-component .session-quick-details{
+    width: 122px;
+  }
+  .ui-component .session-quick-details > ul{
+    margin: 0 5px;
+  }
+  .ui-component .session-date{
+    font-size: 0.9em;
+  }
+  .ui-component .session-time{
+    font-size: 1.1em;
+  }
+  .ui-component .session-active-title{
+    font-size: 0.9em;
+  }
+  .ui-component .session-active-count{
+    font-size: 1.1em;
+  }
+  .ui-profile-sessions .ui-component-options
+  {
+    text-align: center;
+  }
+  .ui-component-options{
+    width: 118px;
+    background: unset;
+    position: unset;
+    opacity: 1;
+    display: table-cell;
+    font-size: 1.2em;
+    padding-left: 0px;
+  }
+  .ui-component-channel-options{
+    vertical-align: middle;
+  }
+  .ui-component-options > ul > li{
+    padding-bottom: 0px;
+    display: inline-block;
+    font-size: 1.2em;
+  }
+  .ui-component-channel-options > ul > li{
+    display: table-cell;
+  }
+  .ui-component .session-status{
+    padding-top: 0px;
+    font-size: 0.6em;
+    display: inline-block;
+  }
+}
+@media (max-width :  400px)
+{
+  .ui-component{
+    padding: 0px;
+  }
+  .ui-component .session-quick-details{
+    width: 122px;
+  }
+  .ui-component .session-quick-details > ul{
+    margin: 0 5px;
+  }
+  .ui-component .session-date{
+    font-size: 0.9em;
+  }
+  .ui-component .session-time{
+    font-size: 1.1em;
+  }
+  .ui-component .session-active-title{
+    font-size: 0.9em;
+  }
+  .ui-component .session-active-count{
+    font-size: 1.1em;
+  }
+  .ui-profile-sessions .ui-component-options
+  {
+    text-align: center;
+  }
+  .ui-component-options{
+    width: 118px;
+    background: unset;
+    position: unset;
+    opacity: 1;
+    display: table-cell;
+    font-size: 1.2em;
+    padding-left: 0px;
+  }
+  .ui-component-channel-options{
+    vertical-align: middle;
+  }
+  .ui-component-options > ul > li{
+    padding-bottom: 0px;
+    display: inline-block;
+    font-size: 1.2em;
+  }
+  .ui-component-channel-options > ul > li{
+    display: table-cell;
+  }
+  .ui-component .session-status{
+    padding-top: 0px;
+    font-size: 0.6em;
+    display: inline-block;
+  }
+}
+@media (max-width :  340px)
+{
+  .ui-component{
+    padding: 0px;
+  }
+  .ui-component .session-quick-details{
+    width: 170px;
+  }
+  .ui-component .session-quick-details > ul{
+    margin: 0 5px;
+  }
+  .ui-component .session-date{
+    font-size: 0.7em;
+  }
+  .ui-component .session-time{
+    font-size: 0.9em;
+  }
+  .ui-component .session-active-title{
+    font-size: 0.7em;
+  }
+  .ui-component .session-active-count{
+    font-size: 0.9em;
+  }
+  .ui-profile-sessions .ui-component-options
+  {
+    text-align: center;
+  }
+  .ui-component-options{
+    width: 118px;
+    background: unset;
+    position: unset;
+    opacity: 1;
+    display: table-cell;
+    font-size: 1.2em;
+    padding-left: 0px;
+  }
+  .ui-component-channel-options{
+    vertical-align: middle;
+  }
+  .ui-component-options > ul > li{
+    padding-bottom: 0px;
+    display: inline-block;
+    font-size: 1.2em;
+  }
+  .ui-component-channel-options > ul > li{
+    display: table-cell;
+  }
+  .ui-component .session-status{
+    padding-top: 0px;
+    font-size: 0.6em;
+    display: inline-block;
+  }
+}
+/*
+ End Session status and book button
+*/
+
+/*
+ Start Modal Centering
+*/
+.modal-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) !important;
+  margin: 0px !important;
+}
+/*
+ End Modal Centering
+*/

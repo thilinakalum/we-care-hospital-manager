@@ -1,0 +1,196 @@
+<div class="row justify-content-center">
+  <div class="col-12">
+    <ng-snotify></ng-snotify>
+    <ngx-spinner></ngx-spinner>
+    <section class="container-sessions">
+      <h3 class="ui-component-note">We Care</h3>
+      <div class="ui-profile">
+        <div class="doctor-profile">
+          <div class="doctor-photo"><img
+              src="https://image.freepik.com/free-vector/doctor-character-background_1270-84.jpg"></div>
+          <div class="doctor-quick-details">
+            <ul>
+              <li class="doctor-name"><a href="#/">Dr. {{doctorSession.fkDoctor.name}}</a> <span
+                  class="doctor-qualifications"></span>
+              </li>
+              <li class="doctor-title">
+                {{doctorSession.fkDoctor.description}}
+              </li>
+              <li>Special Notes: <span class="text-danger"> {{doctorSession.fkDoctor.qualification}}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="ui-profile-sessions">
+        <ul>
+          <li>
+            <div class="ui-component ui-component-primary ui-component-sessions">
+
+              <div class="ui-component-content">
+                <div class="session-quick-details">
+                  <ul>
+                    <li class="session-date">{{doctorSession.startTime}}</li>
+                    <li class="session-time">{{doctorSession.endTime}}</li>
+                  </ul>
+                </div>
+                <div class="session-counter ui-action" data-original-title="" title="">
+                  <ul>
+                    <li class="session-active-title">Patient No.</li>
+                    <li class="session-active-count">
+                      {{doctorSession.availaility}}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="ui-component-content pending-time timer-div">
+                <ul>
+                  COMPLETE WITHIN
+                  <b id="timer-change">
+                    <div class="timer-quick" data-seconds-left="299">
+                      <div class="jst-hours"></div>
+                      <div class="jst-minutes">04:</div>
+                      <div class="jst-seconds">07</div>
+                      <div class="jst-clearDiv"></div>
+                    </div>
+                  </b>
+                </ul>
+              </div>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+
+      <div class="ui-profile-content">
+        <form #inputForm="ngForm">
+          <div class="form-group " id="book-name-div">
+            <label for="name" class="col-lg-2 control-label">Patient's Name*</label>
+            <div class="col-lg-8">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon5"><i class="fa fa-user text-danger"></i></span>
+                </div>
+                <select id="book-title" class="form-control" name="title" [(ngModel)]="booking.fkCustomer.title" required>
+                  <option value="1">Mr.</option>
+                  <option value="2">Mrs.</option>
+                  <option value="3">Mast.</option>
+                  <option value="4">Miss</option>
+                  <option value="5">Dr.</option>
+                  <option value="6">Dr (Ms.)</option>
+                  <option value="7">Dr (Mrs.)</option>
+                  <option value="8">Prof.</option>
+                  <option value="9">Prof (Ms.)</option>
+                  <option value="10">Prof (Mrs.)</option>
+                  <option value="11">Rev.</option>
+                  <option value="12">Baby</option>
+                  <option value="13">Sis.</option>
+                  <option value="14">Ms.</option>
+                  <option value="17">Hon.</option>
+                </select>
+                <span class="input-group-addon"></span>
+                <input id="book-name" [(ngModel)]="booking.fkCustomer.fname" class="form-control"
+                  placeholder="First Name - Required" name="name" type="text" required>
+                <span class="input-group-addon"></span>
+                <input id="book-name" [(ngModel)]="booking.fkCustomer.lname" class="form-control"
+                  placeholder="Last Name - Required" name="name" type="text" required>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group " id="book-phone-div">
+            <label for="phone" class="col-lg-2 control-label">Mobile *</label>
+            <div class="col-lg-8">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-phone text-danger"></i></span>
+                </div>
+                <input [(ngModel)]="booking.fkCustomer.mobile" id="book-phone" class="form-control"
+                  placeholder="Phone - Required" maxlength="10" name="phone" type="text">
+              </div>
+            </div>
+          </div>
+          <div class="form-group " id="book-passport-div">
+            <label for="passport" class="col-lg-2 control-label">Age</label>
+            <div class="col-lg-8">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-globe text-warning"></i></span>
+                </div>
+                <input id="book-passport" [(ngModel)]="booking.fkCustomer.age" class="form-control" placeholder="Age"
+                  name="passport" type="number" required>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group " id="book-nic-div">
+            <label for="nic" class="col-lg-2 control-label">NIC / Passport *</label>
+            <div class="col-lg-8">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-certificate text-warning"></i></span>
+                </div>
+                <input id="book-nic" [(ngModel)]="booking.fkCustomer.nic" class="form-control"
+                  placeholder="NIC / Passport - Required" name="nic" type="text">
+              </div>
+              <span class="help-block" id="nic-validation"></span>
+            </div>
+          </div>
+
+          <div class="form-group " id="book-email-div">
+            <label for="email" class="col-lg-2 control-label">E-mail</label>
+            <div class="col-lg-8">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                </div>
+                <input id="book-email" [(ngModel)]="booking.fkCustomer.email" class="form-control"
+                  placeholder="E-Mail - Optional" name="email" type="text" required>
+              </div>
+
+              <span class="help-block" id="email-validation"></span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="running-number" class="col-lg-2 control-label">Ongoing Number</label>
+            <div class="col-lg-8">
+              <div class="radio" style="padding-top: 5px;">
+                <label>
+                  <input checked="checked" name="running-number" type="radio" value="1"> Yes &nbsp;
+                </label>
+                <label>
+                  <input name="running-number" type="radio" value="0"> No
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group term-con">
+            <label class="col-lg-2 control-label"></label>
+            <div class="col-lg-8">
+              <div class="input-group" style="border-bottom: 0px;">
+                By clicking "Continue", I agree to the <a href="#" data-toggle="modal" data-target="#terms">Terms &amp;
+                  Conditions</a> in use for Additional Service
+              </div>
+            </div>
+          </div>
+
+          <input name="timer_value" type="hidden" value="1561389969|1748">
+
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-dialog" id="continue" (click)="createBooking()"><i
+                  class="fa fa-check-square-o fa-fw"></i>
+                Continue
+              </button>
+            </div>
+          </div>
+
+        </form>
+      </div>
+
+    </section>
+  </div>
+</div>

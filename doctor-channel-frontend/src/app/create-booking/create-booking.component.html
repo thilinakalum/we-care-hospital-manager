@@ -1,0 +1,79 @@
+<div class="row justify-content-center">
+  <div class="col-md-8">
+    <div style="text-align: center; margin-top: 250px" *ngIf="lording">
+      <img src="../../assets/loader.gif" height="256" width="256"/>
+    </div>
+
+    <section class="container-doctors" *ngIf="!lording">
+      <h3 class="ui-component-note">We Care</h3>
+      <div class="ui-profile">
+        <div class="doctor-profile">
+          <div class="doctor-photo"><img src="https://image.freepik.com/free-vector/doctor-character-background_1270-84.jpg"></div>
+          <div class="doctor-quick-details">
+            <ul>
+              <li class="doctor-name" *ngIf="doctor.id==null"><a href="#/">Doctor Not Available !</a>
+                <span class="doctor-qualifications"></span></li>
+              <li class="doctor-title">
+              <li class="doctor-name" *ngIf="doctor.id!=null"><a href="#/">Dr.{{doctor.name}}</a>
+                <span class="doctor-qualifications"></span></li>
+              <li class="doctor-title">
+                {{doctor.description}}
+              </li>
+              <li>Special Notes: <span class="text-danger">{{doctor.qualification}}</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="panel">
+          <div class="panel-heading" role="tab" id="heading-9">
+            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-9"
+               aria-expanded="false" aria-controls="collapse-9">
+              <h4 class="panel-title">
+                <i class="fa fa-stethoscope fa-fw"></i>{{doctor.qualification}}<span class="pull-right"><i
+                class="fa fa-chevron-down fa-fw"></i></span><br>
+                <small>{{doctorSessionList.length}} Sessions</small>
+              </h4>
+            </a>
+          </div>
+          <div id="collapse-9" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading-9">
+            <div class="ui-profile-sessions ui-profile-sessions-list">
+              <ul *ngFor="let doctorSession of doctorSessionList">
+                <li>
+                  <div class="ui-component ui-component-primary ui-component-sessions ui-component-channel">
+                    <div class="ui-component-content">
+                      <div class="session-quick-details" style="width: 255px">
+                        <ul>
+                          <li class="session-date">{{doctorSession.sessionDate}}</li>
+                          <li class="session-time">{{doctorSession.startTime}} - {{doctorSession.endTime}}</li>
+                        </ul>
+                      </div>
+                      <div class="session-counter ui-action" data-original-title="" title="">
+                        <ul>
+                          <li class="session-active-title">Active Appointments</li>
+                          <li class="session-active-count">
+                            {{doctorSession.availaility}}
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="ui-component-options">
+                      <ul>
+                        <li style="margin-left: 50px">
+                          <a (click)="confirmbooking(doctorSession)" class="btn btn-dialog" >
+                            <i class="fa fa-bookmark-o fa-fw"></i> Channel</a>
+                        </li>
+                        <li class="session-status">Available</li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
