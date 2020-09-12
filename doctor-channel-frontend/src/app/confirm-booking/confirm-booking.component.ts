@@ -1,6 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {DoctorChannelingService} from '../service/doctor-channeling.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {Booking} from '../dto/booking';
 import {DoctorSession} from '../dto/doctor-session';
 import {SnotifyService} from 'ng-snotify';
@@ -21,7 +21,8 @@ export class ConfirmBookingComponent implements OnInit {
     private doctorChannelingService: DoctorChannelingService,
     private snotifyService: SnotifyService,
     private ngxSpinnerService: NgxSpinnerService,
-    private route: ActivatedRoute) {
+    private route: ActivatedRoute,
+    private router: Router) {
   }
 
   ngOnInit() {
@@ -59,15 +60,16 @@ export class ConfirmBookingComponent implements OnInit {
               this.booking.bookingNo = 1;
               this.doctorChannelingService.saveBooking(this.booking).subscribe((data) => {
                 this.snotifyService.success('Create Booking Success', 'SUCCESS', {
-                  timeout: 2000,
+                  timeout: 0,
                   showProgressBar: false,
                   closeOnClick: false,
                   pauseOnHover: true
                 });
                 this.ngxSpinnerService.hide();
+                setTimeout(() => this.router.navigate(['']),2000);
               }, (e) => {
                 this.snotifyService.error('Create Booking Error', 'ERROR', {
-                  timeout: 2000,
+                  timeout: 0,
                   showProgressBar: false,
                   closeOnClick: false,
                   pauseOnHover: true

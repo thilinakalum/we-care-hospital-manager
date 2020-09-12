@@ -21,4 +21,7 @@ public interface BookingRepository extends JpaRepository<Booking, Integer> {
       nativeQuery = true)
   List<Object[]> getAppointmentsByDate(
       @Param("startDate") String startDate, @Param("endDate") String endDate);
+
+  @Query(value = "SELECT MAX(booking_no)FROM booking", nativeQuery = true)
+  Integer getMaximumNumber();
 }

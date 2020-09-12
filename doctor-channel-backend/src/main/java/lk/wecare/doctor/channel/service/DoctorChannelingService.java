@@ -1,10 +1,13 @@
 package lk.wecare.doctor.channel.service;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.client.RestTemplate;
 
 import lk.wecare.doctor.channel.entity.Booking;
 import lk.wecare.doctor.channel.entity.Customer;
@@ -21,15 +24,20 @@ import lk.wecare.doctor.channel.repository.DoctorSessionRepository;
 @Transactional
 public class DoctorChannelingService {
 
-  @Autowired private DoctorRepository doctorRepository;
+  @Autowired
+  private DoctorRepository doctorRepository;
 
-  @Autowired private DoctorCategoryRepository doctorCategoryRepository;
+  @Autowired
+  private DoctorCategoryRepository doctorCategoryRepository;
 
-  @Autowired private DoctorSessionRepository doctorSessionRepository;
+  @Autowired
+  private DoctorSessionRepository doctorSessionRepository;
 
-  @Autowired private BookingRepository bookingRepository;
+  @Autowired
+  private BookingRepository bookingRepository;
 
-  @Autowired private CustomerRepository customerRepository;
+  @Autowired
+  private CustomerRepository customerRepository;
 
   public List<Doctor> findAllDoctolers() {
     return doctorRepository.findAll();
@@ -59,7 +67,35 @@ public class DoctorChannelingService {
 
   public Booking saveBooking(Booking booking) {
     Customer saveCustomer = customerRepository.save(booking.getFkCustomer());
+    booking.setCreatedDateTime(new java.sql.Date(new Date().getTime()));
+    Integer lastBookingNo = bookingRepository.getMaximumNumber();
+    booking.setBookingNo(lastBookingNo + 1);
     booking.setFkCustomer(saveCustomer);
+
+    String message = "";
+    message = message + "Dear Patient," + "\n";
+    message = message + "Your appointment to " + "\n";
+    message = message + booking.getFkDoctor().getName() + "\n";
+    message = message + "has been confirmed" + "\n";
+    message = message + "Appointment number - " + booking.getBookingNo() + "\n";
+    message =
+        message + "Appointment Date" + " " + new SimpleDateFormat("yyyy-MM-dd").format(new Date())
+            + "\n";
+    message =
+        message + "Appointment Time" + " " + new SimpleDateFormat("hh:mm a").format(new Date())
+            + "\n";
+    String uri =
+        "http://supervision-sms.supervisionglobal.com/send_sms.php?api_key=9963327589&number=94"
+            + booking.getFkCustomer().getMobile() + "&message=" + message;
+    System.out.println("MESSAGE " + uri);
+    RestTemplate restTemplate = new RestTemplate();
+    String result = restTemplate.getForObject(uri, String.class);
+    if ("0".equals(result)) {
+      System.out.println("SENT");
+    } else {
+      System.out.println("ERROR");
+    }
+
     return bookingRepository.save(booking);
   }
 }
