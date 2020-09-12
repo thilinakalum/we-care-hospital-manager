@@ -34,7 +34,6 @@ public class BookingService {
   @Autowired private DoctorSessionRepository doctorSessionRepository;
 
   private SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-  private SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
 
   public List<BookingDetailModel> getAllBookingDetails() {
     List<BookingDetailModel> list = new ArrayList<>();
@@ -73,12 +72,8 @@ public class BookingService {
                 doctorSessionRepository.findDoctorSessionById(doctorSessionId);
             Date sessionDate = doctorSession.getSessionDate();
             bookingDetailModel.setSessionDate(simpleDateFormat.format(sessionDate));
-
-            Time startTime = doctorSession.getStartTime();
-            bookingDetailModel.setStartTime(sdf.format(startTime.getTime()));
-
-            Time endTime = doctorSession.getEndTime();
-            bookingDetailModel.setEndTime(sdf.format(endTime.getTime()));
+            bookingDetailModel.setStartTime(doctorSession.getStartTime());
+            bookingDetailModel.setEndTime(doctorSession.getEndTime());
           }
 
           list.add(bookingDetailModel);
@@ -115,12 +110,8 @@ public class BookingService {
                   Integer.parseInt(String.valueOf(object[3])));
           Date sessionDate = doctorSession.getSessionDate();
           bookingDetailModel.setSessionDate(simpleDateFormat.format(sessionDate));
-
-          Time startTime = doctorSession.getStartTime();
-          bookingDetailModel.setStartTime(sdf.format(startTime.getTime()));
-
-          Time endTime = doctorSession.getEndTime();
-          bookingDetailModel.setEndTime(sdf.format(endTime.getTime()));
+          bookingDetailModel.setStartTime(doctorSession.getStartTime());
+          bookingDetailModel.setEndTime(doctorSession.getEndTime());
 
           Optional<Customer> optionalCustomer =
               customerRepository.findById(Integer.parseInt(String.valueOf(object[4])));

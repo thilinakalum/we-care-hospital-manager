@@ -25,6 +25,7 @@ import {MDoctorComponent} from './view/master/m-doctor/m-doctor.component';
 import {NgxSpinnerModule} from 'ngx-spinner';
 import {CommonService} from './view/master/m-doctor/service/common.service';
 import {AppointmentComponent} from './view/master/appointment/appointment.component';
+import { MDoctorSessionComponent } from './view/master/m-doctor-session/m-doctor-session.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import {AppointmentComponent} from './view/master/appointment/appointment.compon
     LoginComponent,
     MDoctorComponent,
     AppointmentComponent,
+    MDoctorSessionComponent
   ],
   imports: [
     BrowserModule,

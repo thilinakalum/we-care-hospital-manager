@@ -1,0 +1,118 @@
+<app-header></app-header>
+<app-navigation></app-navigation>
+<div class="content-wrapper">
+  <section class="content" style="overflow-y:hidden;overflow-x:hidden; height: calc(100vh - 99px) !important;">
+    <div class="content">
+      <div class="row">
+          <ng-snotify></ng-snotify>
+          <ngx-spinner></ngx-spinner>
+        <div class="box">
+          <div class="box-body">
+            <div>
+              <table class="table table-bordered tableBodyScroll">
+                <thead>
+                  <tr>
+                    <th id="2" style="width: 15%">Session Date</th>
+                    <th id="3" style="width: 15%">Start Time</th>
+                    <th id="4" style="width: 15%">End Time</th>
+                    <th id="4" style="width: 10%">Max Apointments</th>
+                    <th id="4" style="width: 10%">Availaility</th>
+                    <th id="5" style="width: 30%" class="text-right">Doctor</th>
+                    <th id="6" style="width: 10%" class="text-right">
+                      <button type="submit" class="btn btn-flat btn-success btn-xs"
+                      (click)="new()">NEW
+                    </button>
+                  </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let doctorSession of doctorSessionList;let rowNo=index;">
+                    <td style="width: 15%">
+                      {{doctorSession.sessionDate}}
+                    </td>
+                    <td style="width: 15%">
+                      {{doctorSession.startTime}}
+                    </td>
+                    <td style="width: 15%">
+                      {{doctorSession.endTime}}
+                    </td>
+                    <td style="width: 10%">
+                      {{doctorSession.maxEpointments}}
+                    </td>
+                    <td style="width: 10%">
+                      <span class="badge bg-green">{{doctorSession.availaility}}</span>
+                    </td>
+                    <td style="width: 30%" class="text-right">
+                      <span class="badge bg-yellow">{{doctorSession.fkDoctor.name}}</span>
+                    </td>
+                    <td style="width: 10%">
+                      <button type="submit" class="btn btn-flat btn-success btn-xs"
+                        (click)="edit(rowNo,doctorSession)">EDIT
+                      </button>
+                      <button type="submit" class="btn btn-flat btn-danger btn-xs"
+                        (click)="delete(rowNo,doctorSession)">DELETE
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ngx-smart-modal #advanceOrderDetail identifier="masterForm">
+      <div class="content">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="box box-success">
+              <div class="box-body">
+                <form #inputForm="ngForm">
+                  <div class="form-group">
+                    <label>Session Date</label>
+                    <input name="doctorSession.sessionDate|date:'dd/MM/yyyy" class="form-control input-sm" type="date" [(ngModel)]="doctorSession.sessionDate"
+                      required>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Start Time</label>
+                    <input name="doctorSession.startTime" class="form-control input-sm" type="time" [(ngModel)]="doctorSession.startTime"
+                    required>
+                  </div>
+                  <div class="form-group">
+                    <label>End Time</label>
+                    <input name="doctorSession.endTime" class="form-control input-sm" type="time" [(ngModel)]="doctorSession.endTime"
+                    required>
+                  </div>
+                  <div class="form-group">
+                    <label>Max Apointments</label>
+                    <input name="doctorSession.maxEpointments" class="form-control input-sm" type="number" [(ngModel)]="doctorSession.maxEpointments"
+                    required>
+                  </div>
+                  <div class="form-group">
+                    <label>Doctor</label>
+                    <select class="form-control input-sm select2" name="doctorSession.fkDoctor"
+                      [(ngModel)]="doctorSession.fkDoctor" required>
+                      <option [ngValue]="doctor" *ngFor="let doctor of doctorList">
+                        {{doctor.name}}
+                      </option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <button type="submit" class="btn btn-flat btn-primary btn-sm" style="margin-top: 25px;"
+                      (click)="save()">SAVE
+                    </button>
+                    <button type="submit" class="btn btn-flat btn-danger btn-sm" style="margin-top: 25px;"
+                      (click)="clear()">CLEAR
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ngx-smart-modal>
+  </section>
+</div>
+<app-footer></app-footer>

@@ -5,11 +5,17 @@ import {UrlPermission} from './view/security/urlPermission/url.permission';
 import {LoginComponent} from './view/security/login/login.component';
 import { MDoctorComponent } from './view/master/m-doctor/m-doctor.component';
 import {AppointmentComponent} from './view/master/appointment/appointment.component';
+import { MDoctorSessionComponent } from './view/master/m-doctor-session/m-doctor-session.component';
 
 const routes: Routes = [
   {
     path: 'm-doctor',
     component: MDoctorComponent,
+    canActivate: [UrlPermission]
+  },
+  {
+    path: 'm-doctor-session',
+    component: MDoctorSessionComponent,
     canActivate: [UrlPermission]
   },
   {

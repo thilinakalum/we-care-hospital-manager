@@ -2,6 +2,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Router, RoutesRecognized} from '@angular/router';
 import { MDoctorComponent } from '../../master/m-doctor/m-doctor.component';
 import {AppointmentComponent} from '../../master/appointment/appointment.component';
+import { MDoctorSessionComponent } from '../../master/m-doctor-session/m-doctor-session.component';
 
 export enum NavigationMenuTypes {
   MASTER,
@@ -40,6 +41,9 @@ export class NavigationComponent implements OnInit {
           case MDoctorComponent:
             this.setActiveMenu(NavigationMenuTypes.MASTER);
             break;
+            case MDoctorSessionComponent:
+              this.setActiveMenu(NavigationMenuTypes.MASTER);
+              break;
           case AppointmentComponent:
             this.setActiveMenu(NavigationMenuTypes.MASTER);
             break;

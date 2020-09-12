@@ -73,7 +73,9 @@ public class DoctorChannelingService {
     booking.setFkCustomer(saveCustomer);
 
     String message = "";
-    message = message + "Dear Patient," + "\n";
+    message =
+        message + booking.getFkCustomer().getTitle() + " " + booking.getFkCustomer().getFname()
+            + " " + booking.getFkCustomer().getLname() + "\n";
     message = message + "Your appointment to " + "\n";
     message = message + booking.getFkDoctor().getName() + "\n";
     message = message + "has been confirmed" + "\n";
@@ -84,6 +86,8 @@ public class DoctorChannelingService {
     message =
         message + "Appointment Time" + " " + new SimpleDateFormat("hh:mm a").format(new Date())
             + "\n";
+    message = message + "\n";
+    message = message + "- We Care." + "\n";
     String uri =
         "http://supervision-sms.supervisionglobal.com/send_sms.php?api_key=9963327589&number=94"
             + booking.getFkCustomer().getMobile() + "&message=" + message;

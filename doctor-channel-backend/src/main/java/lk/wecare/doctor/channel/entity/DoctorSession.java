@@ -36,10 +36,10 @@ public class DoctorSession implements Serializable {
   private Integer id;
 
   private Date sessionDate;
-  private Time startTime;
-  private Time endTime;
+  private String startTime;
+  private String endTime;
   private int maxEpointments;
-  private short availaility;
+  private int availaility;
 
   @JoinColumn(name = "fk_doctor", referencedColumnName = "id")
   @ManyToOne(fetch = FetchType.EAGER)

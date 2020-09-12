@@ -13,15 +13,21 @@
         </a>
         <ul class="treeview-menu">
           <li [ngClass]="{'treeview': true, 'active': activeMenu == NavigationMenuTypes.MASTER}"
-              (click)="setActiveMenu(NavigationMenuTypes.MASTER)">
+            (click)="setActiveMenu(NavigationMenuTypes.MASTER)">
             <a routerLink="/m-doctor">
               <span>DOCTOR</span>
+            </a>
+          </li>
+          <li [ngClass]="{'treeview': true, 'active': activeMenu == NavigationMenuTypes.MASTER}"
+            (click)="setActiveMenu(NavigationMenuTypes.MASTER)">
+            <a routerLink="/m-doctor-session">
+              <span>DOCTOR SESSION</span>
             </a>
           </li>
         </ul>
         <ul class="treeview-menu">
           <li [ngClass]="{'treeview': true, 'active': activeMenu == NavigationMenuTypes.MASTER}"
-              (click)="setActiveMenu(NavigationMenuTypes.MASTER)">
+            (click)="setActiveMenu(NavigationMenuTypes.MASTER)">
             <a routerLink="/appointments">
               <span>APPOINTMENTS</span>
             </a>
